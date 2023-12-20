@@ -27,9 +27,10 @@ def predict():
     y_pred = model.predict(X)[0]
     rate = round(y_pred, 2)
     result = {
-        'rate': float(round(rate,2))
+        'rate': float(rate)
     }
-    return jsonify(round(result['rate'],2))
+    return jsonify(result)
+# jsonify(round(result['rate'],2))
 
 if __name__ == '__main__':
     app.run(debug=True, host = '0.0.0.0',port=9696)
